@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>mzDB, un format de fichier pour stocker les données de spectrométrie de masse - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://localhost:8000/mzdb-un-format-de-fichier-pour-stocker-les-donnees-de-spectrometrie-de-masse.html">
+
+        <meta name="author" content="jerkos" />
+        <meta name="keywords" content="c++,mass-spectrometry,file format,metabolomics,proteomics,mzML" />
+        <meta name="description" content="Nécessité de conversion Les chercheurs souvent, cherche à convertir les fichiers bruts constructeurs (fermés binaires) en format de fichier ouvert, notamment dans les standards définis par PSI afin de les traiter par des solutions bioinformatiques maisons bien moins onéreuses, voire libres. Ainsi sont nés les formats basé sur du XML ..." />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="mzDB, un format de fichier pour stocker les données de spectrométrie de masse"/>
+        <meta property="og:url" content="http://localhost:8000/mzdb-un-format-de-fichier-pour-stocker-les-donnees-de-spectrometrie-de-masse.html"/>
+        <meta property="og:description" content="Nécessité de conversion Les chercheurs souvent, cherche à convertir les fichiers bruts constructeurs (fermés binaires) en format de fichier ouvert, notamment dans les standards définis par PSI afin de les traiter par des solutions bioinformatiques maisons bien moins onéreuses, voire libres. Ainsi sont nés les formats basé sur du XML ..."/>
+        <meta property="article:published_time" content="2015-03-28" />
+            <meta property="article:section" content="Projets" />
+            <meta property="article:tag" content="c++" />
+            <meta property="article:tag" content="mass-spectrometry" />
+            <meta property="article:tag" content="file format" />
+            <meta property="article:tag" content="metabolomics" />
+            <meta property="article:tag" content="proteomics" />
+            <meta property="article:tag" content="mzML" />
+            <meta property="article:author" content="jerkos" />
+
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@OmicsServices">
+        <meta name="twitter:creator" content="@OmicsServices">
+    <meta name="twitter:domain" content="http://localhost:8000">
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="http://localhost:8000/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+        <link href="http://localhost:8000/images/static/custom.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://localhost:8000/" class="navbar-brand">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="http://localhost:8000/pages/about-me.html">About me</a></li>
+                    <li><a href="http://localhost:8000/author/jerkos.html">All posts</a></li>
+                        <li class="active">
+                            <a href="http://localhost:8000/category/projets.html">Projets</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://localhost:8000/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://localhost:8000/mzdb-un-format-de-fichier-pour-stocker-les-donnees-de-spectrometrie-de-masse.html"
+                       rel="bookmark"
+                       title="Permalink to mzDB, un format de fichier pour stocker les données de spectrométrie de masse">
+                        mzDB, un format de fichier pour stocker les données de spectrométrie de&nbsp;masse
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-03-28T00:00:00"> sam. 28 mars 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://localhost:8000/tag/c.html">c++</a>
+        /
+	<a href="http://localhost:8000/tag/mass-spectrometry.html">mass-spectrometry</a>
+        /
+	<a href="http://localhost:8000/tag/file-format.html">file format</a>
+        /
+	<a href="http://localhost:8000/tag/metabolomics.html">metabolomics</a>
+        /
+	<a href="http://localhost:8000/tag/proteomics.html">proteomics</a>
+        /
+	<a href="http://localhost:8000/tag/mzml.html">mzML</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>Nécessité de&nbsp;conversion</h3>
+<p>Les chercheurs souvent, cherche à convertir les fichiers bruts constructeurs (fermés binaires) en format de fichier ouvert, notamment dans les standards définis par <span class="caps">PSI</span> afin de les traiter par des solutions bioinformatiques maisons bien moins onéreuses, voire libres. Ainsi sont nés les formats basé sur du <span class="caps">XML</span>: mzXML, mzML (standard). L&#8217;ouverture du format de stockage, bien que nécessaire a un effet pervers puisque bien souvent, les fichiers convertis sont nettement plus gros en taille que les fichiers&nbsp;d&#8217;origine. </p>
+<h3>Augmentation temps de calcul et de&nbsp;stockage</h3>
+<p>Or, on met désormais plus de temps à traiter les données qu&#8217;à les générer. La taille des fichiers d&#8217;acquisition ne cesse d&#8217;augmenter (spectromètre de plus en plus rapide, plus de nouvelles acquisitions,<span class="caps">SWATH</span>, <span class="caps">DIA</span>).</p>
+<p>Ces deux phénomènes entrainent la nécessité d&#8217;avoir un espace de stockage couteux et des infrastructures adaptées pour traiter les données en un temps raisonnable (d&#8217;autant que les fichiers xml ne permettent pas d&#8217;accélérer les algorithmes &#8212;du au temps d&#8217;accès aux&nbsp;données&#8212;).</p>
+<h3>Une nouvel espoir&#8230;(paraphrase de Star&nbsp;Wars)</h3>
+<p>J&#8217;ai travaillé, au <span class="caps">CNRS</span>, à la création d&#8217;un nouveau format de fichier pour stocker les données de masse, nommé <strong>mzDB</strong> basé sur SQLite. Il permet de réduire l&#8217;espace de stockage (fichier plus compact au moins d&#8217;un tiers par rapport au fichier xml), d&#8217;accélérer la lecture des spectres, l&#8217;extraction des <span class="caps">XIC</span> (eXtracted Ion Chromatogram), tout en étant regardant par rapport aux métadonnées. En un mot, beaucoup d&#8217;avantage par rapport au fichier type&nbsp;xml.</p>
+<p><img alt="mzdb image" src="images/mzdb.png" /></p>
+<p>Il y a quelques inconvénients; l&#8217;implémentation actuelle stocke les données sous forme binaire, et est donc plateforme dépendant (e.g. les plateformes ne respectant pas la norme <span class="caps">IEEE754</span> tout&nbsp;particulièrement). </p>
+<p>La communauté a semble-t-il pris conscience de ce problème et souhaiterait s&#8217;orienter vers ce type de fichier, plus efficaces. Mais, le temps d&#8217;élaborer un nouveau standard va prendre un certain temps à n&#8217;en pas&nbsp;douter&#8230;</p>
+<h3>Implémentation</h3>
+<p>mzDB a été pensé par faciliter l&#8217;extraction de données de différentes manières, selon 3 scenarii je dirai. A chaque scenario correspond un <strong>index</strong>:</p>
+<ul>
+<li>index sur les spectres, permettant une lecture séquentielle spectre à spectre rapide (utilisation classique dans le sens de l&#8217;acquisition, cependant peu performant pour les algorithmes actuellement&nbsp;implémentés)</li>
+<li>index sur ce qu&#8217;on appelle les <em>run-slices</em>, entité orthogonale au spectre, possédant donc une dimension en mz fixe. Cette index permet d&#8217;écrire des algorithmes particulièrement rapide pour la quantification par&nbsp;exemple.</li>
+<li>index R* <span class="caps">TREE</span>, extraction d&#8217;un région particulière. mzDB est plus rapide de plusieurs ordres de magnitude par rapport à tous ses&nbsp;concurrents.</li>
+</ul>
+<p>J&#8217;ai collaboré sur deux&nbsp;aspects: </p>
+<ul>
+<li>la conversion du fichier constructeur en mzDB. La bibliothèque C++ <a href="http://proteowizard.sourceforge.net">Proteowizard</a> permet de lire les fichiers <em>raw, wiff</em> etc&#8230; J&#8217;ai écrit pas mal de code C, C++ low-level pour des questions de&nbsp;performance.</li>
+<li>la partie relecture du fichier mzDB en Java (le reste de notre projet est en&nbsp;Java/Scala)</li>
+</ul>
+<p>La publication se trouve <a href="http://www.ncbi.nlm.nih.gov/pubmed/25505153">ici</a>, et le code est sur&nbsp;Github.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+    <!-- AddThis Button END -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'jerkos'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'mzdb-un-format-de-fichier-pour-stocker-les-donnees-de-spectrometrie-de-masse';
+                var disqus_url = 'http://localhost:8000/mzdb-un-format-de-fichier-pour-stocker-les-donnees-de-spectrometrie-de-masse.html';
+
+            var disqus_config = function () {
+                this.language = "fr";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+    <p>
+        <strong>About jerkos</strong><br/>
+        <strong>Informatics, sciences, philosophy, and apart, CEO of <a href='omics-services.com'>Omics</a></strong>
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://localhost:8000/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/c.html">
+                            c++
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/data-mining.html">
+                            data-mining
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/file-format.html">
+                            file format
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://localhost:8000/tag/mass-spectrometry.html">
+                            mass-spectrometry
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://localhost:8000/tag/metabolomics.html">
+                            metabolomics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/mzml.html">
+                            mzML
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/proteomics.html">
+                            proteomics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://localhost:8000/tag/python.html">
+                            python
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+    </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://omics-services.com" target="_blank">
+                Omics Services
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 jerkos
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+
+    <!-- GitHub JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = 'http://localhost:8000/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: 'jerkos',
+                count: 4,
+                skip_forks: true,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="http://localhost:8000/theme/js/github.js" type="text/javascript"></script>
+    <!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jerkos'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=5513e13c162ecf83"></script>
+</body>
+</html>
